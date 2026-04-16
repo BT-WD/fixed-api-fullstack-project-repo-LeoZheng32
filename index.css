@@ -1,1 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: "Courier New", Courier, monospace;
+  background: #fff;
+  color: #000;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.nav-left {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nav-title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.profile-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+
+.search-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem 0 1rem;
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.search-row label {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.search-row input[type="text"] {
+  padding: 3px 8px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #aaa;
+  background: #e8e8e8;
+  color: #000;
+  outline: none;
+  width: 120px;
+}
+
+.play-btn {
+  padding: 5px 20px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #aaa;
+  background: #e8e8e8;
+  color: #000;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  background: #d4d4d4;
+}
+
+.content-box {
+  margin: 0 1rem 1rem;
+  background: #d9d9d9;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+}
