@@ -20,12 +20,20 @@ body {
 .nav-left {
   font-size: 15px;
   font-weight: 600;
+  width: 120px;
 }
 
 .nav-title {
   font-size: 20px;
   font-weight: 800;
   letter-spacing: 1px;
+  margin-right: 60px;
+}
+
+.nav-right {
+  width: 120px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .profile-btn {
@@ -42,6 +50,10 @@ body {
   color: #555;
 }
 
+.profile-btn:hover {
+  background: #d4d4d4;
+}
+
 .search-area {
   display: flex;
   flex-direction: column;
@@ -54,11 +66,6 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 15px;
-}
-
-.search-row label {
-  font-family: "Courier New", Courier, monospace;
 }
 
 .search-row input[type="text"] {
@@ -69,7 +76,21 @@ body {
   background: #e8e8e8;
   color: #000;
   outline: none;
-  width: 120px;
+  width: 180px;
+}
+
+.search-btn {
+  padding: 5px 14px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #aaa;
+  background: #e8e8e8;
+  color: #000;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: #d4d4d4;
 }
 
 .play-btn {
