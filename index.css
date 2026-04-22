@@ -116,3 +116,68 @@ body {
   justify-content: center;
   padding: 2rem;
 }
+
+.evolution-chain {
+  margin-top: 1rem;
+  border-top: 1px solid #aaa;
+  padding-top: 0.75rem;
+}
+ 
+.evo-stages {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+ 
+.evo-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+ 
+.evo-stage img {
+  background: #c8c8c8;
+  border-radius: 4px;
+  padding: 4px;
+}
+ 
+.evo-stage.current img {
+  outline: 2px solid #000;
+}
+ 
+.evo-stage span {
+  font-size: 11px;
+  font-weight: 700;
+  font-family: "Courier New", Courier, monospace;
+}
+ 
+.evo-stage.current span {
+  text-decoration: underline;
+}
+ 
+.evo-no-img {
+  width: 80px;
+  height: 80px;
+  background: #c8c8c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 4px;
+}
+ 
+.evo-arrow {
+  font-size: 20px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 20px;
+}
+ 
+.no-evo {
+  margin-top: 0.5rem;
+  font-size: 13px;
+  color: #555;
+}
