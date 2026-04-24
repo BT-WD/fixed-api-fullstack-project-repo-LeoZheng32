@@ -181,3 +181,151 @@ body {
   font-size: 13px;
   color: #555;
 }
+
+.game-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.silhouette {
+  filter: brightness(0);
+}
+
+.clue-box {
+  margin: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.guess-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+.guess-input {
+  padding: 3px 8px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #aaa;
+  background: #e8e8e8;
+  color: #000;
+  outline: none;
+  width: 160px;
+}
+
+.guess-btn {
+  padding: 5px 14px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #aaa;
+  background: #e8e8e8;
+  color: #000;
+  cursor: pointer;
+}
+
+.guess-btn:hover {
+  background: #d4d4d4;
+}
+
+.guess-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.result-msg {
+  margin-top: 0.6rem;
+  font-weight: 700;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+.game-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.silhouette {
+  filter: brightness(0);
+}
+
+.clue-box {
+  margin: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.guess-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+.guess-input {
+  padding: 3px 8px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #aaa;
+  background: #e8e8e8;
+  color: #000;
+  outline: none;
+  width: 160px;
+}
+
+.guess-btn {
+  padding: 5px 14px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #aaa;
+  background: #e8e8e8;
+  color: #000;
+  cursor: pointer;
+}
+
+.guess-btn:hover {
+  background: #d4d4d4;
+}
+
+.guess-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.result-msg {
+  margin-top: 0.6rem;
+  font-weight: 700;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+.mode-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.mode-btn {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #aaa;
+  background: #e8e8e8;
+  color: #000;
+  cursor: pointer;
+}
+
+.mode-btn:hover {
+  background: #d4d4d4;
+}
+
+.mode-btn.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
