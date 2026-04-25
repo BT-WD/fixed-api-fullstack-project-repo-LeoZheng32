@@ -3,30 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokemon Website</title>
+    <title>PokéGuess</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css"/>
   </head>
   <body>
 
     <nav class="nav">
-      <span class="nav-left">High Score: </span>
-      <span class="nav-title">PokéDex & Guess!</span>
-      <button class="profile-btn">profile</button>
+      <div class="nav-score">
+        <span class="score-label">SCORE</span>
+        <span class="nav-left score-value">0</span>
+      </div>
+      <div class="nav-brand">
+        <span class="nav-title">PokéResearch</span>
+      </div>
+      <div class="nav-score nav-score--right">
+        <span class="score-label">BEST</span>
+        <span class="nav-right-score score-value">0</span>
+      </div>
     </nav>
 
-    <div class="search-area">
+    <div class="top-bar">
       <div class="search-row">
-        <input type="text" id="searchInput" placeholder="Type to Search" />
-        <button class="search-btn">search</button>
+        <input type="text" id="searchInput" placeholder="Search Pokédex…" autocomplete="off" />
+        <button class="search-btn">Search</button>
       </div>
-      <button class="play-btn" id="playBtn">play</button>
+      <button class="play-btn" id="playBtn">▶ Play</button>
     </div>
 
-    <div class="content-box" id="contentArea">
-      
-    </div>
-    
+    <div id="searchHistoryMount"></div>
+
+    <main class="content-box" id="contentArea">
+      <div class="idle-state">
+        <p>Search a Pokémon or press Play to start guessing!</p>
+      </div>
+    </main>
+
     <script src="index.js"></script>
-
   </body>
 </html>

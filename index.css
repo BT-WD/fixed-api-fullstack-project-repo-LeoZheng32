@@ -1,331 +1,321 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --bg:      #111;
+  --surface: #1c1c1c;
+  --border:  #2a2a2a;
+  --yellow:  #f5c518;
+  --text:    #e0e0e0;
+  --muted:   #666;
+  --red:     #e05555;
+  --green:   #4caf7d;
+  --font:    'DM Mono', monospace;
 }
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  font-family: "Courier New", Courier, monospace;
-  background: #fff;
-  color: #000;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  min-height: 100vh;
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.nav-left {
-  font-size: 15px;
-  font-weight: 600;
-  width: 120px;
-}
+.nav-brand { text-align: center; }
 
 .nav-title {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
   letter-spacing: 1px;
-  margin-right: 60px;
 }
 
-.nav-right {
-  width: 120px;
-  display: flex;
-  justify-content: flex-end;
+.nav-sub {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  margin-top: 2px;
 }
 
-.profile-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid #ccc;
-  background: #f0f0f0;
-  font-size: 11px;
-  cursor: pointer;
+.nav-score { min-width: 80px; }
+.nav-score--right { text-align: right; }
+
+.score-label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.score-value {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--yellow);
+}
+
+.top-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  gap: 10px;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
 }
 
-.profile-btn:hover {
-  background: #d4d4d4;
+.search-row { display: flex; gap: 6px; }
+
+input[type="text"] {
+  padding: 6px 10px;
+  font-size: 13px;
+  font-family: var(--font);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  border-radius: 4px;
+  width: 180px;
 }
 
-.search-area {
+input[type="text"]:focus { border-color: var(--yellow); }
+input::placeholder { color: var(--muted); }
+input:disabled { opacity: 0.4; }
+
+button {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: var(--font);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover { border-color: var(--yellow); color: var(--yellow); }
+button:disabled { opacity: 0.35; cursor: default; color: var(--muted); }
+button:disabled:hover { border-color: var(--border); color: var(--muted); }
+
+.play-btn {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+.search-history-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.search-history-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.history-btn {
+  font-size: 11px;
+  padding: 3px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.content-box {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.idle-state {
+  color: var(--muted);
+  margin-top: 3rem;
+  letter-spacing: 0.5px;
+}
+
+.pokemon-card,
+.game-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.pokemon-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 0.5rem 0 1rem;
-}
-
-.search-row {
-  display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.search-row input[type="text"] {
-  padding: 3px 8px;
-  font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
-  border: 1px solid #aaa;
-  background: #e8e8e8;
-  color: #000;
-  outline: none;
-  width: 180px;
+.pokemon-card h2 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--yellow);
 }
 
-.search-btn {
-  padding: 5px 14px;
-  font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
-  border: 1px solid #aaa;
-  background: #e8e8e8;
-  color: #000;
-  cursor: pointer;
+.pokemon-card > img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin: 0.5rem 0;
 }
 
-.search-btn:hover {
-  background: #d4d4d4;
+.pokemon-card p {
+  color: var(--muted);
+  align-self: flex-start;
 }
 
-.play-btn {
-  padding: 5px 20px;
-  font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
-  border: 1px solid #aaa;
-  background: #e8e8e8;
-  color: #000;
-  cursor: pointer;
-}
-
-.play-btn:hover {
-  background: #d4d4d4;
-}
-
-.content-box {
-  margin: 0 1rem 1rem;
-  background: #d9d9d9;
-  min-height: 280px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 2rem;
-}
+.pokemon-card p span { color: var(--text); }
 
 .evolution-chain {
   margin-top: 1rem;
-  border-top: 1px solid #aaa;
-  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  width: 100%;
 }
- 
+
+.evolution-chain > p {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.game-card { display: flex; flex-direction: column; gap: 0; }
+
+.game-title {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--yellow);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.clue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.clue-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+}
+
+.clue-item.full-width { grid-column: 1 / -1; }
+
+.clue-key {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.clue-val { color: var(--text); }
+
+.game-evo-section {
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.game-evo-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+/* ── EVO ROW ── */
 .evo-stages {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 0.5rem;
 }
- 
+
 .evo-stage {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
 }
- 
+
 .evo-stage img {
-  background: #c8c8c8;
-  border-radius: 4px;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
   padding: 4px;
 }
- 
-.evo-stage.current img {
-  outline: 2px solid #000;
+
+.evo-stage img.silhouette {
+  filter: brightness(0);
+  background: transparent;
+  border-color: transparent;
 }
- 
-.evo-stage span {
-  font-size: 11px;
-  font-weight: 700;
-  font-family: "Courier New", Courier, monospace;
+
+.evo-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
- 
-.evo-stage.current span {
-  text-decoration: underline;
-}
- 
-.evo-no-img {
-  width: 80px;
-  height: 80px;
-  background: #c8c8c8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  border-radius: 4px;
-}
- 
+
 .evo-arrow {
-  font-size: 20px;
-  font-weight: 700;
-  color: #555;
+  font-size: 16px;
+  color: var(--border);
   margin-bottom: 20px;
+  flex-shrink: 0;
 }
- 
-.no-evo {
-  margin-top: 0.5rem;
+
+.no-evo { color: var(--muted); font-size: 12px; }
+
+.guess-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 0.25rem;
+}
+
+.guess-input { flex: 1; }
+
+.result-msg {
+  margin-top: 0.6rem;
   font-size: 13px;
-  color: #555;
+  min-height: 18px;
 }
 
-.game-title {
-  font-size: 18px;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-}
+.result-msg.correct { color: var(--green); }
+.result-msg.wrong   { color: var(--red); }
 
-.silhouette {
-  filter: brightness(0);
-}
-
-.clue-box {
-  margin: 0.75rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.guess-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 0.5rem;
-}
-
-.guess-input {
-  padding: 3px 8px;
-  font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
-  border: 1px solid #aaa;
-  background: #e8e8e8;
-  color: #000;
-  outline: none;
-  width: 160px;
-}
-
-.guess-btn {
-  padding: 5px 14px;
-  font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
-  border: 1px solid #aaa;
-  background: #e8e8e8;
-  color: #000;
-  cursor: pointer;
-}
-
-.guess-btn:hover {
-  background: #d4d4d4;
-}
-
-.guess-btn:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
-.result-msg {
-  margin-top: 0.6rem;
-  font-weight: 700;
-  font-size: 14px;
-  min-height: 20px;
-}
-
-.game-title {
-  font-size: 18px;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-}
-
-.silhouette {
-  filter: brightness(0);
-}
-
-.clue-box {
-  margin: 0.75rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.guess-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 0.5rem;
-}
-
-.guess-input {
-  padding: 3px 8px;
-  font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
-  border: 1px solid #aaa;
-  background: #e8e8e8;
-  color: #000;
-  outline: none;
-  width: 160px;
-}
-
-.guess-btn {
-  padding: 5px 14px;
-  font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
-  border: 1px solid #aaa;
-  background: #e8e8e8;
-  color: #000;
-  cursor: pointer;
-}
-
-.guess-btn:hover {
-  background: #d4d4d4;
-}
-
-.guess-btn:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
-.result-msg {
-  margin-top: 0.6rem;
-  font-weight: 700;
-  font-size: 14px;
-  min-height: 20px;
-}
-
-.mode-bar {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 1rem;
-}
-
-.mode-btn {
-  padding: 4px 12px;
-  font-size: 12px;
-  font-family: "Courier New", Courier, monospace;
-  border: 1px solid #aaa;
-  background: #e8e8e8;
-  color: #000;
-  cursor: pointer;
-}
-
-.mode-btn:hover {
-  background: #d4d4d4;
-}
-
-.mode-btn.active {
-  background: #000;
-  color: #fff;
-  border-color: #000;
+.loading-msg {
+  color: var(--muted);
+  margin-top: 3rem;
 }
